@@ -1,11 +1,10 @@
-import {
+import type {
   DefaultContext,
   DrawCommand,
   DynamicVariable,
   DynamicVariableFn,
-  Regl,
-  Resource,
 } from 'regl';
+import { Regl, Resource } from 'regl';
 import { Output } from './Output';
 import { Loop } from './Loop';
 import { Source } from './Source';
