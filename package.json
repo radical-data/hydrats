@@ -10,7 +10,17 @@
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "dev": "vite",
     "coverage": "nyc npm run test",
-    "prepack": "tsc -p tsconfig.json"
+    "prepack": "tsc -p tsconfig.json",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{css,md,json,yaml,yml}": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
