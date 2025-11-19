@@ -74,7 +74,7 @@ export class Hydra {
     const outputs = [];
     const sources = [];
 
-    const synth = {
+    const synth: Synth = {
       bpm: 30,
       fps: undefined,
       resolution: [width, height],
@@ -83,7 +83,7 @@ export class Hydra {
         fps: 0,
       },
       time: 0,
-    } as const;
+    };
 
     const defaultUniforms = {
       time: regl.prop<HydraDrawUniforms, keyof HydraDrawUniforms>('time'),
