@@ -4,17 +4,21 @@ import { utilityFunctions } from '../glsl/utilityFunctions';
 import { TransformApplication } from '../glsl/Glsl';
 import { DynamicVariable, DynamicVariableFn, Texture2D, Uniform } from 'regl';
 import { generateGlsl } from './generateGlsl';
+import { Glsl } from '../glsl/Glsl';
 
 export type CompiledTransform = {
   frag: string;
   uniforms: {
     [name: string]:
       | string
+      | number
+      | number[]
       | Uniform
-      | ((context: any, props: any) => number | number[])
       | Texture2D
+      | Glsl
       | DynamicVariable<any>
       | DynamicVariableFn<any, any, any>
+      | ((context: any, props: any) => number | number[])
       | undefined;
   };
 };

@@ -68,7 +68,7 @@ const types = {
 
 */
 
-import { Texture2D } from 'regl';
+import type { Texture2D } from 'regl';
 
 export type TransformDefinitionType =
   | 'src'
@@ -1087,23 +1087,6 @@ export const modifierTransforms = [
    c = _hsvToRgb(c);
    c = fract(c);
    return vec4(c, _c0.a);`,
-  },
-  {
-    name: 'sum',
-    type: 'color',
-    inputs: [
-      {
-        type: 'vec4',
-        name: 'scale',
-        default: 1,
-      },
-    ],
-    glsl: `   vec4 v = _c0 * s;
-   return v.r + v.g + v.b + v.a;
-   }
-   float sum(vec2 _st, vec4 s) { // vec4 is not a typo, because argument type is not overloaded
-   vec2 v = _st.xy * s.xy;
-   return v.x + v.y;`,
   },
   {
     name: 'r',
